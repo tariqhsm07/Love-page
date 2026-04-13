@@ -1,152 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>50 Reasons Why I Love You ❤️</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>50 Reasons Why I Love You ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #ffd6e7, #fff0f6);
+      color: #4a2a3a;
+      text-align: center;
+    }
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-    text-align: center;
-}
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 20px 60px;
+    }
 
-.container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-}
+    .login-box, .content {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      padding: 25px;
+      margin-top: 30px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
 
-.login-box {
-    margin-top: 100px;
-}
+    h1 {
+      margin-bottom: 10px;
+      font-size: 32px;
+    }
 
-input {
-    padding: 10px;
-    width: 70%;
-    margin: 10px 0;
-    border-radius: 10px;
-    border: none;
-}
+    h2 {
+      margin-top: 0;
+    }
 
-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    background: #ff4b5c;
-    color: white;
-    font-weight: bold;
-}
+    p.intro {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
 
-.content {
-    display: none;
-    margin-top: 30px;
-}
+    input {
+      padding: 12px;
+      width: 240px;
+      max-width: 80%;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      font-size: 16px;
+      outline: none;
+    }
 
-ul {
-    text-align: left;
-    padding: 20px;
-}
+    button {
+      padding: 12px 18px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-left: 8px;
+      background: #ff6fa1;
+      color: white;
+    }
 
-li {
-    margin: 8px 0;
-}
+    button:hover {
+      opacity: 0.9;
+    }
 
-.footer {
-    margin-top: 20px;
-    font-weight: bold;
-}
-</style>
+    .content {
+      display: none;
+    }
+
+    .reasons {
+      text-align: left;
+      max-width: 700px;
+      margin: 25px auto 0;
+      padding: 0;
+    }
+
+    .reasons li {
+      background: #fff;
+      list-style: none;
+      margin: 10px 0;
+      padding: 14px 16px;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      font-size: 17px;
+    }
+
+    .gallery {
+      margin-top: 35px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 15px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 16px;
+      object-fit: cover;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    }
+
+    .note {
+      margin-top: 25px;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 26px;
+      }
+
+      button {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+        max-width: 250px;
+      }
+
+      input {
+        width: 100%;
+        max-width: 250px;
+      }
+
+      .reasons li {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="container">
+    <div class="login-box" id="loginBox">
+      <h1>For My Love ❤️</h1>
+      <p class="intro">This page is only for you. Enter the password, baby 💖</p>
+      <input type="password" id="password" placeholder="Enter password">
+      <button onclick="checkPassword()">Open</button>
+    </div>
 
-<div class="container">
+    <div class="content" id="content">
+      <h1>50 Reasons Why I Love You ❤️</h1>
+      <p class="intro">A little reminder of how much you mean to me.</p>
 
-<div id="loginBox" class="login-box">
-<h2>Enter password ❤️</h2>
-<input type="password" id="password" placeholder="Password...">
-<br>
-<button onclick="checkPassword()">Enter</button>
-</div>
+      <ul class="reasons">
+        <li>1. ur face</li>
+        <li>2. ur smile</li>
+        <li>3. ur eyes</li>
+        <li>4. ur voice</li>
+        <li>5. ur laugh</li>
+        <li>6. ur personality</li>
+        <li>7. ur kindness</li>
+        <li>8. ur soft heart</li>
+        <li>9. you understand me</li>
+        <li>10. ur smell</li>
+        <li>11. you make me laugh</li>
+        <li>12. you make me feel safe</li>
+        <li>13. we have so much things in common</li>
+        <li>14. the way you care about me</li>
+        <li>15. you are thoughtful</li>
+        <li>16. you always make me feel special</li>
+        <li>17. ur cute hehe</li>
+        <li>18. you forgive me even when I mess up</li>
+        <li>19. you call me baby</li>
+        <li>20. you try ur best to fix things between us</li>
+        <li>21. you’re proud of me</li>
+        <li>22. you make me feel loved</li>
+        <li>23. you always support me</li>
+        <li>24. even my family loves you</li>
+        <li>25. you send me “us” things</li>
+        <li>26. you always know how to make me feel better</li>
+        <li>27. you’re so missable</li>
+        <li>28. ur so lovable</li>
+        <li>29. you make my heart feel full</li>
+        <li>30. you always choose me</li>
+        <li>31. ur smart</li>
+        <li>32. you like learning new things</li>
+        <li>33. you know how to deal with everything</li>
+        <li>34. you always care about my comfort</li>
+        <li>35. ur always there for me</li>
+        <li>36. you always think about me</li>
+        <li>37. you try ur best to be with me</li>
+        <li>38. you make me feel important</li>
+        <li>39. you make my life better</li>
+        <li>40. everyone loves you</li>
+        <li>41. ur perfect to me</li>
+        <li>42. ur my favorite girl</li>
+        <li>43. ur my peace</li>
+        <li>44. you care a lot</li>
+        <li>45. you don’t let anything come between us</li>
+        <li>46. you always check on me</li>
+        <li>47. you never give up on me</li>
+        <li>48. you make everything feel easier</li>
+        <li>49. you would stand with me no matter what</li>
+        <li>50. ur my favorite person ever</li>
+      </ul>
 
-<div id="content" class="content">
-<h2>50 Reasons Why I Love You ❤️</h2>
+      <div class="gallery">
+        <h2>Our Photos 📸</h2>
+        <p>For now, these are placeholders. Later we can replace them with your real photos.</p>
+        <div class="gallery-grid">
+          <img src="https://placekitten.com/400/300" alt="Photo 1">
+          <img src="https://placekitten.com/401/300" alt="Photo 2">
+          <img src="https://placekitten.com/400/301" alt="Photo 3">
+          <img src="https://placekitten.com/401/301" alt="Photo 4">
+        </div>
+      </div>
 
-<ul>
-<li>ur face</li>
-<li>ur smile</li>
-<li>ur eyes</li>
-<li>ur voice</li>
-<li>ur laugh</li>
-<li>ur personality</li>
-<li>ur kindness</li>
-<li>ur soft heart</li>
-<li>you understand me</li>
-<li>ur smell</li>
-<li>you make me laugh</li>
-<li>you make me feel safe</li>
-<li>we have so much things in common</li>
-<li>the way you care about me</li>
-<li>you are thoughtful</li>
-<li>you always make me feel special</li>
-<li>ur cute hehe</li>
-<li>you forgive me even when I mess up</li>
-<li>you call me baby</li>
-<li>you try ur best to fix things between us</li>
-<li>you’re proud of me</li>
-<li>you make me feel loved</li>
-<li>you always support me</li>
-<li>even my family loves you</li>
-<li>you send me “us” things</li>
-<li>you always know how to make me feel better</li>
-<li>you’re so missable</li>
-<li>ur so lovable</li>
-<li>you make my heart feel full</li>
-<li>you always choose me</li>
-<li>ur smart</li>
-<li>you like learning new things</li>
-<li>you know how to deal with everything</li>
-<li>you always care about my comfort</li>
-<li>ur always there for me</li>
-<li>you always think about me</li>
-<li>you try ur best to be with me</li>
-<li>you make me feel important</li>
-<li>you make my life better</li>
-<li>everyone loves you</li>
-<li>ur perfect to me</li>
-<li>ur my favorite girl</li>
-<li>ur my peace</li>
-<li>you care a lot</li>
-<li>you don’t let anything come between us</li>
-<li>you always check on me</li>
-<li>you never give up on me</li>
-<li>you make everything feel easier</li>
-<li>you would stand with me no matter what</li>
-<li>ur my favorite person ever</li>
-</ul>
+      <p class="note">
+        No matter how many reasons I write, they will never be enough to explain how much I love you.
+      </p>
 
-<div class="footer">
-Forever my favorite ❤️
-</div>
-</div>
+      <div class="footer">Forever my favorite person 💖</div>
+    </div>
+  </div>
 
-</div>
-
-<script>
-function checkPassword() {
-    const password = document.getElementById("password").value;
-
-    if (password === "myloveruby") {
+  <script>
+    function checkPassword() {
+      const password = document.getElementById("password").value;
+      if (password === "roby123") {
         document.getElementById("loginBox").style.display = "none";
         document.getElementById("content").style.display = "block";
-    } else {
+      } else {
         alert("Wrong password baby 😢");
+      }
     }
-}
-</script>
-
+  </script>
 </body>
 </html>
