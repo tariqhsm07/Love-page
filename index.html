@@ -1,211 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>50 Reasons Why I Love You ❤️</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #ffd6e7, #fff0f6);
-      color: #4a2a3a;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<title>Garage System</title>
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 30px 20px 60px;
-    }
+<style>
+body {
+  font-family: Arial;
+  background: #f2f2f2;
+  margin: 0;
+}
 
-    .login-box, .content {
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 20px;
-      padding: 25px;
-      margin-top: 30px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-    }
+h1 {
+  text-align: center;
+  padding: 20px;
+  background: #444;
+  color: white;
+}
 
-    h1 {
-      margin-bottom: 10px;
-      font-size: 32px;
-    }
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
 
-    h2 {
-      margin-top: 0;
-    }
+.car {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+}
 
-    p.intro {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
+input {
+  width: 100%;
+  margin: 5px 0;
+  padding: 8px;
+}
 
-    input {
-      padding: 12px;
-      width: 240px;
-      max-width: 80%;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      font-size: 16px;
-      outline: none;
-    }
+button {
+  margin-top: 10px;
+  padding: 8px;
+  width: 48%;
+  border: none;
+  background: #444;
+  color: white;
+  cursor: pointer;
+}
 
-    button {
-      padding: 12px 18px;
-      border: none;
-      border-radius: 12px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-left: 8px;
-      background: #ff6fa1;
-      color: white;
-    }
-
-    button:hover {
-      opacity: 0.9;
-    }
-
-    .content {
-      display: none;
-    }
-
-    .reasons {
-      text-align: left;
-      max-width: 700px;
-      margin: 25px auto 0;
-      padding: 0;
-    }
-
-    .reasons li {
-      background: #fff;
-      list-style: none;
-      margin: 10px 0;
-      padding: 14px 16px;
-      border-radius: 14px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      font-size: 17px;
-    }
-
-    .note {
-      margin-top: 25px;
-      font-size: 18px;
-      line-height: 1.7;
-    }
-
-    .footer {
-      margin-top: 30px;
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 26px;
-      }
-
-      button {
-        margin-left: 0;
-        margin-top: 10px;
-        width: 100%;
-        max-width: 250px;
-      }
-
-      input {
-        width: 100%;
-        max-width: 250px;
-      }
-
-      .reasons li {
-        font-size: 16px;
-      }
-    }
-  </style>
+button:hover {
+  background: #666;
+}
+</style>
 </head>
+
 <body>
-  <div class="container">
-    <div class="login-box" id="loginBox">
-      <h1>For My Love ❤️</h1>
-      <p class="intro">This page is only for you. Enter the password, baby 💖</p>
-      <input type="password" id="password" placeholder="Enter password">
-      <button onclick="checkPassword()">Open</button>
-    </div>
 
-    <div class="content" id="content">
-      <h1>50 Reasons Why I Love You ❤️</h1>
-      <p class="intro">A little reminder of how much you mean to me.</p>
+<h1>Garage System 🚗</h1>
 
-      <ul class="reasons">
-        <li>1. ur face</li>
-        <li>2. ur smile</li>
-        <li>3. ur eyes</li>
-        <li>4. ur voice</li>
-        <li>5. ur laugh</li>
-        <li>6. ur personality</li>
-        <li>7. ur kindness</li>
-        <li>8. ur soft heart</li>
-        <li>9. you understand me</li>
-        <li>10. ur smell</li>
-        <li>11. you make me laugh</li>
-        <li>12. you make me feel safe</li>
-        <li>13. we have so much things in common</li>
-        <li>14. the way you care about me</li>
-        <li>15. you are thoughtful</li>
-        <li>16. you always make me feel special</li>
-        <li>17. ur cute hehe</li>
-        <li>18. you forgive me even when I mess up</li>
-        <li>19. you call me baby</li>
-        <li>20. you try ur best to fix things between us</li>
-        <li>21. you’re proud of me</li>
-        <li>22. you make me feel loved</li>
-        <li>23. you always support me</li>
-        <li>24. even my family loves you</li>
-        <li>25. you send me “us” things</li>
-        <li>26. you always know how to make me feel better</li>
-        <li>27. you’re so missable</li>
-        <li>28. ur so lovable</li>
-        <li>29. you make my heart feel full</li>
-        <li>30. you always choose me</li>
-        <li>31. ur smart</li>
-        <li>32. you like learning new things</li>
-        <li>33. you know how to deal with everything</li>
-        <li>34. you always care about my comfort</li>
-        <li>35. ur always there for me</li>
-        <li>36. you always think about me</li>
-        <li>37. you try ur best to be with me</li>
-        <li>38. you make me feel important</li>
-        <li>39. you make my life better</li>
-        <li>40. everyone loves you</li>
-        <li>41. ur perfect to me</li>
-        <li>42. ur my favorite girl</li>
-        <li>43. ur my peace</li>
-        <li>44. you care a lot</li>
-        <li>45. you don’t let anything come between us</li>
-        <li>46. you always check on me</li>
-        <li>47. you never give up on me</li>
-        <li>48. you make everything feel easier</li>
-        <li>49. you would stand with me no matter what</li>
-        <li>50. ur my favorite person ever</li>
-      </ul>
+<div class="container" id="cars"></div>
 
-      <p class="note">
-        No matter how many reasons I write, they will never be enough to explain how much I love you.
-      </p>
+<script>
+const carNames = [
+"BMW 430",
+"BMW 520",
+"BMW X5",
+"Tahoe",
+"Malibu"
+];
 
-      <div class="footer">Forever my favorite person 💖</div>
-    </div>
-  </div>
+function loadCars() {
+  const container = document.getElementById("cars");
+  container.innerHTML = "";
 
-  <script>
-    function checkPassword() {
-      const password = document.getElementById("password").value;
-      if (password === "myloveruby") {
-        document.getElementById("loginBox").style.display = "none";
-        document.getElementById("content").style.display = "block";
-      } else {
-        alert("Wrong password baby 😢");
-      }
-    }
-  </script>
+  carNames.forEach((name, i) => {
+    const data = JSON.parse(localStorage.getItem(name)) || {};
+
+    container.innerHTML += `
+      <div class="car">
+        <h3>${name}</h3>
+
+        <input placeholder="Fuel (OMR)" value="${data.fuel || ''}" id="fuel${i}">
+        <input placeholder="Current KM" value="${data.km || ''}" id="km${i}">
+        <input placeholder="Last Service KM" value="${data.service || ''}" id="service${i}">
+        <input placeholder="Last Oil Change KM" value="${data.oil || ''}" id="oil${i}">
+        <input placeholder="Issues" value="${data.issues || ''}" id="issues${i}">
+
+        <button onclick="save(${i})">Save</button>
+        <button onclick="resetCar(${i})">Reset</button>
+      </div>
+    `;
+  });
+}
+
+function save(i) {
+  const name = carNames[i];
+
+  const data = {
+    fuel: document.getElementById("fuel"+i).value,
+    km: document.getElementById("km"+i).value,
+    service: document.getElementById("service"+i).value,
+    oil: document.getElementById("oil"+i).value,
+    issues: document.getElementById("issues"+i).value
+  };
+
+  localStorage.setItem(name, JSON.stringify(data));
+  alert("Saved ✅");
+}
+
+function resetCar(i) {
+  const name = carNames[i];
+  localStorage.removeItem(name);
+  loadCars();
+}
+
+loadCars();
+</script>
+
 </body>
-</html>
+</html>ح
