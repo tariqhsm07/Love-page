@@ -2,119 +2,151 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Garage System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>50 Reasons Why I Love You ❤️</title>
 
 <style>
 body {
-  font-family: Arial;
-  background: #f2f2f2;
-  margin: 0;
-}
-
-h1 {
-  text-align: center;
-  padding: 20px;
-  background: #444;
-  color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    text-align: center;
 }
 
 .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
 }
 
-.car {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
+.login-box {
+    margin-top: 100px;
 }
 
 input {
-  width: 100%;
-  margin: 5px 0;
-  padding: 8px;
+    padding: 10px;
+    width: 70%;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
 }
 
 button {
-  margin-top: 10px;
-  padding: 8px;
-  width: 48%;
-  border: none;
-  background: #444;
-  color: white;
-  cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #ff4b5c;
+    color: white;
+    font-weight: bold;
 }
 
-button:hover {
-  background: #666;
+.content {
+    display: none;
+    margin-top: 30px;
+}
+
+ul {
+    text-align: left;
+    padding: 20px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+.footer {
+    margin-top: 20px;
+    font-weight: bold;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Garage System 🚗</h1>
+<div class="container">
 
-<div class="container" id="cars"></div>
+<div id="loginBox" class="login-box">
+<h2>Enter password ❤️</h2>
+<input type="password" id="password" placeholder="Password...">
+<br>
+<button onclick="checkPassword()">Enter</button>
+</div>
+
+<div id="content" class="content">
+<h2>50 Reasons Why I Love You ❤️</h2>
+
+<ul>
+<li>ur face</li>
+<li>ur smile</li>
+<li>ur eyes</li>
+<li>ur voice</li>
+<li>ur laugh</li>
+<li>ur personality</li>
+<li>ur kindness</li>
+<li>ur soft heart</li>
+<li>you understand me</li>
+<li>ur smell</li>
+<li>you make me laugh</li>
+<li>you make me feel safe</li>
+<li>we have so much things in common</li>
+<li>the way you care about me</li>
+<li>you are thoughtful</li>
+<li>you always make me feel special</li>
+<li>ur cute hehe</li>
+<li>you forgive me even when I mess up</li>
+<li>you call me baby</li>
+<li>you try ur best to fix things between us</li>
+<li>you’re proud of me</li>
+<li>you make me feel loved</li>
+<li>you always support me</li>
+<li>even my family loves you</li>
+<li>you send me “us” things</li>
+<li>you always know how to make me feel better</li>
+<li>you’re so missable</li>
+<li>ur so lovable</li>
+<li>you make my heart feel full</li>
+<li>you always choose me</li>
+<li>ur smart</li>
+<li>you like learning new things</li>
+<li>you know how to deal with everything</li>
+<li>you always care about my comfort</li>
+<li>ur always there for me</li>
+<li>you always think about me</li>
+<li>you try ur best to be with me</li>
+<li>you make me feel important</li>
+<li>you make my life better</li>
+<li>everyone loves you</li>
+<li>ur perfect to me</li>
+<li>ur my favorite girl</li>
+<li>ur my peace</li>
+<li>you care a lot</li>
+<li>you don’t let anything come between us</li>
+<li>you always check on me</li>
+<li>you never give up on me</li>
+<li>you make everything feel easier</li>
+<li>you would stand with me no matter what</li>
+<li>ur my favorite person ever</li>
+</ul>
+
+<div class="footer">
+Forever my favorite ❤️
+</div>
+</div>
+
+</div>
 
 <script>
-const carNames = [
-"BMW 430",
-"BMW 520",
-"BMW X5",
-"Tahoe",
-"Malibu"
-];
+function checkPassword() {
+    const password = document.getElementById("password").value;
 
-function loadCars() {
-  const container = document.getElementById("cars");
-  container.innerHTML = "";
-
-  carNames.forEach((name, i) => {
-    const data = JSON.parse(localStorage.getItem(name)) || {};
-
-    container.innerHTML += `
-      <div class="car">
-        <h3>${name}</h3>
-
-        <input placeholder="Fuel (OMR)" value="${data.fuel || ''}" id="fuel${i}">
-        <input placeholder="Current KM" value="${data.km || ''}" id="km${i}">
-        <input placeholder="Last Service KM" value="${data.service || ''}" id="service${i}">
-        <input placeholder="Last Oil Change KM" value="${data.oil || ''}" id="oil${i}">
-        <input placeholder="Issues" value="${data.issues || ''}" id="issues${i}">
-
-        <button onclick="save(${i})">Save</button>
-        <button onclick="resetCar(${i})">Reset</button>
-      </div>
-    `;
-  });
+    if (password === "myloveruby") {
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("content").style.display = "block";
+    } else {
+        alert("Wrong password baby 😢");
+    }
 }
-
-function save(i) {
-  const name = carNames[i];
-
-  const data = {
-    fuel: document.getElementById("fuel"+i).value,
-    km: document.getElementById("km"+i).value,
-    service: document.getElementById("service"+i).value,
-    oil: document.getElementById("oil"+i).value,
-    issues: document.getElementById("issues"+i).value
-  };
-
-  localStorage.setItem(name, JSON.stringify(data));
-  alert("Saved ✅");
-}
-
-function resetCar(i) {
-  const name = carNames[i];
-  localStorage.removeItem(name);
-  loadCars();
-}
-
-loadCars();
 </script>
 
 </body>
-</html>ح
+</html>
