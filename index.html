@@ -87,24 +87,6 @@
       font-size: 17px;
     }
 
-    .gallery {
-      margin-top: 35px;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-top: 15px;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      border-radius: 16px;
-      object-fit: cover;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-    }
-
     .note {
       margin-top: 25px;
       font-size: 18px;
@@ -206,17 +188,6 @@
         <li>50. ur my favorite person ever</li>
       </ul>
 
-      <div class="gallery">
-        <h2>Our Photos 📸</h2>
-        <p>For now, these are placeholders. Later we can replace them with your real photos.</p>
-        <div class="gallery-grid">
-          <img src="https://placekitten.com/400/300" alt="Photo 1">
-          <img src="https://placekitten.com/401/300" alt="Photo 2">
-          <img src="https://placekitten.com/400/301" alt="Photo 3">
-          <img src="https://placekitten.com/401/301" alt="Photo 4">
-        </div>
-      </div>
-
       <p class="note">
         No matter how many reasons I write, they will never be enough to explain how much I love you.
       </p>
@@ -228,7 +199,7 @@
   <script>
     function checkPassword() {
       const password = document.getElementById("password").value;
-      if (password === "roby123") {
+      if (password === "myloveruby") {
         document.getElementById("loginBox").style.display = "none";
         document.getElementById("content").style.display = "block";
       } else {
