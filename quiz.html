@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Family Quiz 🧠</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #f2f2f2;
+    text-align: center;
+    margin: 0;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    margin-top: 80px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: #333;
+    color: white;
+    border-radius: 10px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2 id="question">Loading...</h2>
+    <input type="text" id="answer" placeholder="اكتب الجواب هنا">
+    <br>
+    <button onclick="checkAnswer()">تحقق</button>
+    <p id="result"></p>
+</div>
+
+<script>
+const questions = [
+    {q: "سنة زواج أمي و أبوي؟", a: ["1995"]},
+    {q: "نوع أول سيارة ساقها أبوي؟", a: ["honda"]},
+    {q: "في أي جامعة أمي درست خارج البلد؟", a: ["جامعة ليدز","leeds"]},
+    {q: "من أكثر واحد يعصب إذا كان يبا ينام؟", a: ["لميس"]},
+    {q: "من أكثر واحد يأمر الآخرين بمهام معينة؟", a: ["وفاء"]},
+    {q: "من أكثر واحد ما يجلس في البيت و دايمًا يبا يطلع؟", a: ["رغد"]},
+    {q: "من أكثر واحد يحب القطط؟", a: ["طارق"]},
+    {q: "من أكثر واحد يحب الطماطم؟", a: ["أمي","زوينة"]},
+    {q: "من أكثر واحد يحب يضحك على طلبات شي أن و تيمو؟", a: ["أبوي","حميد"]},
+    {q: "من هم أكثر شخصين محبوبين في العائلة؟", a: ["أمي و أبوي","امي وابوي"]}
+];
+
+let current = 0;
+
+function loadQuestion() {
+    document.getElementById("question").innerText = questions[current].q;
+    document.getElementById("answer").value = "";
+    document.getElementById("result").innerText = "";
+}
+
+function checkAnswer() {
+    let userAnswer = document.getElementById("answer").value.toLowerCase().trim();
+
+    if (questions[current].a.includes(userAnswer)) {
+        current++;
+        if (current < questions.length) {
+            loadQuestion();
+        } else {
+            document.querySelector(".container").innerHTML =
+                "<h2>🎉 مبروك خلصت اللعبة!</h2><p>أنت فعلاً تعرف العائلة زين 😂❤️</p>";
+        }
+    } else {
+        document.getElementById("result").innerText = "❌ الجواب غلط، حاول مرة ثانية";
+    }
+}
+
+loadQuestion();
+</script>
+
+</body>
+</html>
