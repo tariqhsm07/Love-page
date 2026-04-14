@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الرباعي الأسطوري 💀</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    margin-top: 80px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 15px;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 10px;
+}
+
+input {
+    padding: 10px;
+    width: 80%;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+.confetti {
+    font-size: 30px;
+    animation: fall 1s infinite;
+}
+
+@keyframes fall {
+    0% {transform: translateY(-10px);}
+    100% {transform: translateY(10px);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="start">
+<h2>حياكم حياكم في موقع الرباعي الأسطوري 💀</h2>
+<p>بنشوفكم اذا تعرفوا بعض زين ولا لا 😏</p>
+<button onclick="startGame()">ابدأ</button>
+</div>
+
+<div class="container" id="game" style="display:none;">
+<h2 id="question"></h2>
+<input type="text" id="answer" placeholder="اكتب الجواب">
+<br>
+<button onclick="check()">تحقق</button>
+<p id="result"></p>
+</div>
+
+<script>
+const questions = [
+{q:"مين أكثر واحد ينجلد؟",a:["طارق"]},
+{q:"مين أكثر واحد يسوي نفسه فاهم؟",a:["محمد"]},
+{q:"مين أكثر واحد يضحك بدون سبب؟",a:["خالد"]},
+{q:"مين أكثر واحد يختفي فجأة؟",a:["عبدالله"]},
+{q:"مين أكثر واحد يتأخر؟",a:["محمد"]},
+{q:"مين أكثر واحد يعصب؟",a:["طارق"]},
+{q:"مين أكثر واحد يضحك على الثانيين؟",a:["خالد"]},
+{q:"مين أكثر واحد يجي متأخر للقيم؟",a:["عبدالله"]},
+{q:"مين أكثر واحد يسحب؟",a:["محمد"]},
+{q:"مين أكثر واحد يحب القيمات؟",a:["طارق"]}
+];
+
+let current = 0;
+
+// صوت ضحك
+let laugh = new Audio("https://www.myinstants.com/media/sounds/laugh.mp3");
+
+function startGame(){
+document.getElementById("start").style.display="none";
+document.getElementById("game").style.display="block";
+load();
+}
+
+function load(){
+document.getElementById("question").innerText = questions[current].q;
+document.getElementById("answer").value="";
+document.getElementById("result").innerText="";
+}
+
+function check(){
+let ans = document.getElementById("answer").value.toLowerCase().trim();
+
+if(questions[current].a.includes(ans)){
+current++;
+if(current < questions.length){
+load();
+}else{
+document.body.innerHTML = `
+<h1>🎉 هيييييووووااا هنيه يوم تبا ربع 😂🔥</h1>
+<div class="confetti">🎉🎉🎉🎉🎉🎉</div>
+`;
+}
+}else{
+laugh.play();
+document.getElementById("result").innerText = "❌ لا يا الكبش 🤣";
+}
+}
+</script>
+
+</body>
+</html>
