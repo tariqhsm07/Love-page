@@ -22,14 +22,6 @@ body {
     border-radius: 15px;
 }
 
-input {
-    width: 80%;
-    padding: 10px;
-    margin-top: 15px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-}
-
 button {
     margin-top: 15px;
     padding: 10px 20px;
@@ -39,16 +31,26 @@ button {
     border-radius: 10px;
 }
 
-h2 {
-    margin-bottom: 10px;
+input {
+    width: 80%;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-    <h2 id="question">Loading...</h2>
+<div class="container" id="startScreen">
+    <h2>👋 مرحبًا في اختبار العائلة</h2>
+    <p>هل تعتقد أنك تعرف العائلة زين؟ 😏</p>
+    <button onclick="startQuiz()">ابدأ الاختبار</button>
+</div>
+
+<div class="container" id="quizBox" style="display:none;">
+    <h2 id="question"></h2>
     <input type="text" id="answer" placeholder="اكتب الجواب هنا">
     <br>
     <button onclick="checkAnswer()">تحقق</button>
@@ -71,6 +73,12 @@ const questions = [
 
 let current = 0;
 
+function startQuiz() {
+    document.getElementById("startScreen").style.display = "none";
+    document.getElementById("quizBox").style.display = "block";
+    loadQuestion();
+}
+
 function loadQuestion() {
     document.getElementById("question").innerText = questions[current].q;
     document.getElementById("answer").value = "";
@@ -85,15 +93,13 @@ function checkAnswer() {
         if (current < questions.length) {
             loadQuestion();
         } else {
-            document.querySelector(".container").innerHTML =
-                "<h2>🎉 مبروك خلصت اللعبة!</h2><p>أنت فعلاً تعرف العائلة زين 😂❤️</p>";
+            document.getElementById("quizBox").innerHTML =
+                "<h2>🎉 مبروك!</h2><p>أنت وحش الوحوش 🐯 أرنب الأرانب 🐰 سنور السنانير 🐱</p>";
         }
     } else {
         document.getElementById("result").innerText = "❌ الجواب غلط، حاول مرة ثانية";
     }
 }
-
-loadQuestion();
 </script>
 
 </body>
